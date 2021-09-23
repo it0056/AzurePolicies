@@ -1,0 +1,116 @@
+{
+ "properties": {
+  "displayName": "NS - Storage Accounts",
+  "policyType": "Custom",
+  "description": "",
+  "metadata": {
+   "category": "Guardrails",
+   "version": "0.1",
+   "parameterScopes": {
+    "listOfResourceTypes": "/subscriptions/2e69a31a-6cef-4493-b895-3a0d8e16e58e"
+   },
+   "createdBy": "1a82ea23-1f43-49c8-94a3-f967e610a19b",
+   "createdOn": "2021-08-16T10:37:13.7932688Z",
+   "updatedBy": "1a82ea23-1f43-49c8-94a3-f967e610a19b",
+   "updatedOn": "2021-09-09T23:55:01.2699471Z"
+  },
+  "parameters": {},
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "Storage accounts should restrict network access",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/34c877ad-507e-4c82-993e-3452a6e0ad3c",
+    "parameters": {
+     "effect": {
+      "value": "Deny"
+     }
+    },
+    "groupNames": [
+     "PR.PT-4"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Secure transfer to storage accounts should be enabled",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/404c3081-a854-4457-ae30-26a93ef643f9",
+    "parameters": {
+     "effect": {
+      "value": "Deny"
+     }
+    },
+    "groupNames": [
+     "PR.DS-2"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Storage account public access should be disallowed",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4fa4b6c0-31ca-4c0d-b10d-24b96f62a751",
+    "parameters": {},
+    "groupNames": [
+     "PR.PT-4"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Storage account keys should not be expired",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/044985bb-afe1-42cd-8a36-9d5d42424537",
+    "parameters": {},
+    "groupNames": [
+     "PR.AC-1"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Audit diagnostic settings must be present",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/7f89b1eb-583c-429a-8828-af049802c1d9",
+    "parameters": {
+     "listOfResourceTypes": {
+      "value": [
+       "microsoft.storage/storageaccounts",
+       "microsoft.datalakeanalytics/accounts/datalakestoreaccounts"
+      ]
+     }
+    },
+    "groupNames": [
+     "PR.PT-1"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Storage should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/308fbb08-4ab8-4e67-9b29-592e93fb94fa",
+    "parameters": {},
+    "groupNames": [
+     "DE.AE-1"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Storage accounts should prevent shared key access_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8c6a50c6-9ffd-4ae7-986f-5fa6111f9a54",
+    "parameters": {},
+    "groupNames": [
+     "PR.AC-1"
+    ]
+   }
+  ],
+  "policyDefinitionGroups": [
+   {
+    "name": "PR.PT-4",
+    "description": "Communications and control networks are protected"
+   },
+   {
+    "name": "PR.PT-1",
+    "description": "Auditlog records are determined, documented, implemented, and reviewed in accordance with policy"
+   },
+   {
+    "name": "PR.DS-2",
+    "description": "Data-in-transit is protected"
+   },
+   {
+    "name": "PR.AC-1",
+    "description": "Identities and credentials are issued, managed, verified, revoked, and audited for authorized devices, users and processes"
+   },
+   {
+    "name": "DE.AE-1"
+   }
+  ]
+ },
+ "id": "/subscriptions/2e69a31a-6cef-4493-b895-3a0d8e16e58e/providers/Microsoft.Authorization/policySetDefinitions/aea5bb2fd5d9419ba9d138d2",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "aea5bb2fd5d9419ba9d138d2"
+}
